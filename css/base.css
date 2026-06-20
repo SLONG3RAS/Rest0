@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+:root {
+    --bg: #1a1f2e;
+    --panel: #252d3d;
+    --card: #2d3748;
+    --accent: #ff7a3d;
+    --accent-2: #06b6d4;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --line: rgba(255, 255, 255, 0.1);
+    --shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    background: radial-gradient(140% 120% at 20% 20%, rgba(77, 208, 225, 0.16), transparent 42%),
+                radial-gradient(120% 120% at 80% 0%, rgba(255, 122, 61, 0.18), transparent 50%),
+                var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-top: 90px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(20px);
+    z-index: 20;
+    box-shadow: var(--shadow);
+}
+
+#menuGeneral {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#menuGeneral li {
+    display: flex;
+    align-items: center;
+}
+
+#menuGeneral a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+#menuGeneral a:hover {
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.12), rgba(77, 208, 225, 0.12));
+    border: 1px solid rgba(77, 208, 225, 0.25);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(77, 208, 225, 0.12);
+}
+
+#menuGeneral img {
+    height: 24px;
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+#menuGeneral a:hover img {
+    opacity: 1;
+}
+
+#logo {
+    margin: 0 12px;
+}
+
+#logo a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(77, 208, 225, 0.1);
+}
+
+#logo a img {
+    height: 40px;
+    width: auto;
+}
+
+#logo a:hover {
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.15), rgba(77, 208, 225, 0.15));
+    border-color: rgba(77, 208, 225, 0.4);
+    box-shadow: 0 8px 24px rgba(77, 208, 225, 0.18);
+    transform: scale(1.06) translateY(-2px);
+}
+
+#menuGeneral #logo a {
+    padding: 6px 10px;
+}
+
+#corps {
+    max-width: 1400px;
+    margin: 0 auto 96px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#corps h1 {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+}
+
+#texteClassement {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+#bouton {
+    position: fixed;
+    right: 8px;
+    top: 120px;
+    width: 58px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.9), rgba(77, 208, 225, 0.9));
+    border-radius: 14px 0 0 14px;
+    box-shadow: var(--shadow);
+    display: grid;
+    place-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 18;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#bouton:hover {
+    transform: translateX(-2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+}
+
+#bouton div {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+#menuContextuel {
+    position: fixed;
+    top: 90px;
+    right: 0;
+    width: 240px;
+    list-style: none;
+    padding: 18px 18px 12px;
+    background: var(--card);
+    border-left: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    border-radius: 16px 0 0 16px;
+    transform: translateX(240px);
+    transition: transform 0.28s ease;
+    z-index: 17;
+}
+
+#menuContextuel:hover,
+#bouton:hover + #menuContextuel {
+    transform: translateX(0);
+}
+
+#menuContextuel li {
+    margin-bottom: 8px;
+}
+
+#menuContextuel li:first-child {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 12px;
+}
+
+#menuContextuel img {
+    max-height: 48px;
+}
+
+#menuContextuel a {
+    display: block;
+    padding: 12px 10px;
+    border-radius: 12px;
+    color: var(--text);
+    font-weight: 600;
+    transition: all 0.16s ease;
+}
+
+#menuContextuel a:hover {
+    background: rgba(77, 208, 225, 0.12);
+    color: #ffffff;
+    transform: translateX(-2px);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+}
+
+p, li, span {
+    color: var(--muted);
+}
+
+section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+}
+
+footer {
+    color: var(--muted);
+    text-align: center;
+    padding: 24px;
+}
+
+@media (max-width: 1200px) {
+    #corps {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    #menuGeneral {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #menuGeneral a {
+        padding: 8px 12px;
+    }
+
+    #corps {
+        padding: 18px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #menuContextuel {
+        top: 76px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding-top: 110px;
+    }
+
+    #menuGeneral {
+        justify-content: space-between;
+    }
+
+    #menuGeneral li {
+        flex: 0 0 auto;
+    }
+
+    #corps {
+        grid-template-columns: 1fr;
+    }
+
+    #menuContextuel {
+        width: 220px;
+        transform: translateX(220px);
+    }
+}

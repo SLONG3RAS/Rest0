@@ -1,0 +1,679 @@
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: grid;
+    gap: 14px;
+    box-shadow: var(--shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* ========================================
+   STYLES TITRES H1
+   ======================================== */
+
+#corps h1 {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+#accroche {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Lobster', 'Brush Script MT', cursive;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.36);
+}
+
+.photoCard {
+    height: 160px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.35), rgba(77, 208, 225, 0.25));
+    border: 1px dashed var(--line);
+}
+
+.tagCard {
+    display: block;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+#tagFood {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.tag {
+    background: linear-gradient(135deg, rgba(77, 208, 225, 0.15), rgba(255, 122, 61, 0.12));
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    color: var(--accent-2);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.tag::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(77, 208, 225, 0.5), rgba(255, 122, 61, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, rgba(77, 208, 225, 0.25), rgba(255, 122, 61, 0.2));
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(77, 208, 225, 0.3);
+    color: #ffffff;
+}
+
+.tag span {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 2px;
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    backdrop-filter: none;
+    position: static;
+    overflow: visible;
+}
+
+.tag span::before {
+    display: none;
+}
+
+#note {
+    display: inline-flex;
+    gap: 6px;
+    padding: 10px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.note {
+    height: 22px;
+}
+
+section + section {
+    margin-top: 14px;
+}
+
+#adresse, #photos, #horaires, #crit {
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+#galerie {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 0;
+}
+
+#galerie img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+
+#critiques {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+#critiques li {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+h1 {
+    font-size: 2.1rem;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+/* ========================================
+   STYLES PAGE MON PROFIL
+   ======================================== */
+
+.profil-section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profil-section h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+}
+
+form {
+    width: 100%;
+}
+
+/* Annuler les styles de form.css pour les formulaires de profil */
+form:has(.profil-section) {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+    grid-column: 1 / -1;
+}
+
+form .profil-section {
+    margin: 0 0 20px 0;
+}
+
+.profil-info {
+    display: grid;
+    gap: 14px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--panel);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+
+.info-label {
+    color: var(--muted);
+    font-weight: 600;
+    min-width: 180px;
+}
+
+.info-value {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.restos-aimes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.resto-link {
+    display: block;
+    padding: 14px 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.resto-link:hover {
+    background: linear-gradient(120deg, rgba(255, 122, 61, 0.1), rgba(77, 208, 225, 0.1));
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 122, 61, 0.2);
+}
+
+.empty-message {
+    color: var(--muted);
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    background: var(--panel);
+    border-radius: 12px;
+    border: 1px dashed var(--line);
+}
+
+.profil-actions {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-deconnexion {
+    display: inline-block;
+    padding: 12px 32px;
+    background: linear-gradient(120deg, #ff4757, #ff6348);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-deconnexion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 71, 87, 0.4);
+}
+
+/* ========================================
+   STYLES PAGE MODIFIER MON PROFIL
+   ======================================== */
+
+.message-info {
+    background: rgba(77, 208, 225, 0.1);
+    border: 1px solid rgba(77, 208, 225, 0.3);
+    color: var(--accent-2);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.checkbox-list {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background: rgba(255, 122, 61, 0.05);
+    border-color: var(--accent);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 12px;
+}
+
+.checkbox-item label {
+    flex: 1;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tag-checkbox {
+    display: inline-flex;
+    align-items: center;
+}
+
+.tag-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+}
+
+.tag-checkbox label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tag-checkbox .tag {
+    transition: all 0.2s ease;
+}
+
+.tag-checkbox input[type="checkbox"]:checked + label .tag {
+    background: linear-gradient(135deg, rgba(255, 122, 61, 0.3), rgba(255, 122, 61, 0.2));
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   STYLES DETAIL RESTAURANT
+   ======================================== */
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h1 .aimer {
+    height: 36px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+h1 .aimer:hover {
+    transform: scale(1.1);
+}
+
+#note {
+    display: flex;
+    gap: 8px;
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+#note .aimer {
+    height: 28px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity: 0.7;
+}
+
+#note .aimer:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+#note .note {
+    height: 24px;
+    width: auto;
+}
+
+section {
+    display: block;
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+}
+
+section h2 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 12px;
+}
+
+#tagFood {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+#principal {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+#principal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+}
+
+#principal br {
+    display: none;
+}
+
+#adresse,
+#photos,
+#horaires,
+#crit {
+    grid-column: 1 / -1;
+    margin-bottom: 16px;
+}
+
+#adresse + p,
+#horaires + * {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--panel);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-2);
+}
+
+#galerie {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 0;
+    margin: 0 0 24px 0;
+    grid-column: 1 / -1;
+}
+
+#galerie li {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease;
+}
+
+#galerie li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#galerie img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+#critiques {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    grid-column: 1 / -1;
+}
+
+#critiques li {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+#critiques li span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent-2);
+}
+
+#critiques li span a {
+    margin-left: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+#critiques li span a:hover {
+    color: var(--accent-2);
+}
+
+#critiques li div {
+    display: block;
+}
+
+#critiques li div span {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+#critiques li div span:last-child {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+form {
+    grid-column: 1 / -1;
+    margin-bottom: 24px !important;
+}
+
+#commentaireForm {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--text);
+    font-size: 0.95rem;
+    font-family: inherit;
+    margin-bottom: 12px;
+    resize: vertical;
+    transition: all 0.2s ease;
+}
+
+#commentaireForm:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 122, 61, 0.15);
+}
+
+form input[type="submit"] {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 122, 61, 0.2);
+}
+
+form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 122, 61, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE DETAIL RESTAURANT
+   ======================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    h1 .aimer {
+        height: 32px;
+    }
+
+    #galerie {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    #galerie img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    #galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #galerie img {
+        height: 100px;
+    }
+}
